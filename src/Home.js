@@ -1,11 +1,66 @@
-import React from 'react'
-import './Home.css'
+import React from "react";
+import "./Home.css";
+import Product from "./Product";
 function Home() {
-    return (
-        <div className="home">
-            
+  return (
+    <div className="home">
+      <div className="home__container">
+        <img
+          className="home__image"
+          src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonDevices/LEEN/GW_Hero/Main_Desktop_1500x600_DS._CB404300086_.jpg"
+          alt=""
+        ></img>
+        <div className="home__row">
+          <Product
+            id="4568464359"
+            title="The lean startup"
+            price={19.99}
+            image="https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg"
+            rating={3}
+          />
+          <Product
+            id="43568935634"
+            title="Canon PowerShot SX530 Digital Camera w/ 50X Optical Zoom - Wi-Fi & NFC Enabled (Black) "
+            price={199.0}
+            image="data:image/webp;base64,UklGRsQfAABXRUJQVlA4ILgfAACwmQCdASosAeoAPrFMnEekIjCpJxQdUhgWCekIcrGV8JJr8N4HLe5BFK8H8/fbX+490v/ZcFOAb8//s//I9WqcH9oagHC8+l+wF/O/8j/4faX/2f/l53frf9rfgT/Xz05fZH+6P//92P9rP/+icgQKBAJHNf3xcmwP/H3uOaOHMC3vPr8AQ6df59D3adfHrV3nvEhTDta4JMuLt1UR2yVwZMHzDWR7Mz8MrkZpyWeLkd7k9uDBgC2UgZgr7lPiWrSeW/NiT7cUG8UrazcIZEXoJ6oIrJfrqIjdpE9ZxUqq4umP6sMNj/Q+y/3z93UqkzfFFUZ0rE1TSHbTaoQPkGZ3l+B4UwjUquGnpJ19/1NyG87IAg6HR+jo0BRmr8SKvuRqhAZDhVcGYjBE+CSbv4fnRdwxbSN+bZT4tXlr8LLS2/CBl//qpu0RND8oxBbdEnZl3I04wXTkv7za4Gx7chgOqDdn3Oz8MTdpSw3GittSmKEWZ51R+5zYguJlyZGwYKRVWrPOy7K52G/VM3CaElpKIPTWbyaKQDszHdSP95pglXInt2TNd8AMBz90AKKPP4Jr8B8139I8ebTHT2mEf6cmA9XIz8/sh35L/dIF8rX1kGfnSY8tRI1fiYYSR9bmvIRYTPZxbyTA6538M5uBucs+t+UVj1XROnxgnb3rz/JOanHyr9TTwkdgWULNSYfiC4XKepjnCEHJlrZ9dp6RqK1pTsqZcgQfZjhSL+SQ8L24k3r0vDvxYN1kc3CSEXChdv6o95heqMLDf9AxvFQxjOBKtncjwAMCwZ8l6DwP/1orv5iQLFKTk//3AJ65Wdx3a9qum8k3uEjpaQ0T3+idH5wswG9p+qZ5hRnDRwKCMeKfPm/LsoytiiYnmC3YD265u7wMyXOTuzPLbUP6CBpvKI+xxzrrkD9EGRdxGMKqXq7uo49IrlL2fVDH4izox4Ka/kadw5+oxvTjXOJXadDtoRgA2qT02SX7rYG7/h48NkyFJPH1O8KteOHW+BmG0nLf7+iPPHpaK19pindenSz5Xzm/rlG07whV5U6MQE61Y8PumVnUT6fnSGqrBj0mHNAi6U/EiR5ILLQXONSi5YUe5/4jB8sgGxqNasU+rQnjXU19Iu5e5K30ol2V+kE2oVNfzsn7RzWIOLCNCxGlEuqwN9m/oMh2jguG704TTwYQ1Fjmr2kjw/NQj33lDiH34GZO1NqlIofZOe3HRXnxUdZWmHzDdK/V5J/Mykpa5fJDh5AdGX+5ebsCY+4RpiZZza0lwfzXLZtwyDbY9HfsX2RyYRA5nYacra8pa5cZO6E8CPUq92cTl4J1JVYcenS4KSf7iyoXFXJWK94RQFE+LVEbRwi5GjYSAnWGYlmCWmFGNlUFeF/LB6uXVJGncWWrPgi7NboO8NlfuvCuhbrm1F2L7Z29W+i+NaBk9uM8gIFiZnpKzjK/kyhi//fYlQkZdUfOR+h6gaR2LTgxn/SvD0BeXh8nM/Hk1wPBAsDBn92Z3WL8AfBX/hzzaU/MsYZMp4UZSMy3YasF3j78L+vukSHR47n4Px8lXrTrG4bGfYhifX8fVa/xkv8/x4C+/+JRehyShHnFKwfDedCgQVdDbN2AKNPkP8GQUPzA+CxEf67o+JOdlbudVfChAAD+x7AAF943iMawmckzoNHCNV+e6DQf7nzDz4XipfLmACPeoJHQT6T2IVPv/4Oj8d8RZ8F5VZOtb6lttGbYVyHZdquhPn5pcFYmO2Ab1KOBo9IacCBi/lHWFsXaLhlVF5kpOk4yylbdxSwc0wwDq4vU+yNWNtIl48QlkeNusITIQcKowC63i7gEqbz8IR97/y5uIVq6b/ZGVAh6LxD7O0XokV/6mFG0rmwHWGKOlbbnjaX84QgZcZt1PX/ATFkuTTJxroO+wTMYzGfBsjGAsGFDWLdOJq5COyVw0D9FYBc9fGj1k5+gbSNFgbkXSovTrVDREOPQTZXmgl9bi9JyIB8Vmscf0TNj79aumG3C0NsAtOuLSYxpeucxsNgfFTDBHXQb+3TfNWe0UlREIletNoeJ1ylezzoFtlbUMhtYALoziY0pEzUk30DH8XWlfXfuo9GTfbkg1T9oE1BH4asRoC/ByzJpnfrKXnmWYx8vFebhTHQQm2dkgwwxcxH6yPoNE32ExVvmqy4XMmatle315//OTSBPDqbS9/xWXjOoS8Jik9Nie1aTp7lbON3zL+oNe7pk+Xk76rEt1hKOQxjIdIiTC52FCGG945PkUCxGKj1mrYPQZ1OQwnGRGDA8z9Vv1iD+/i1hKNBY9dYdcGjq+546xGoHl+dyQfuc7Gvr9uhD539Gcz7GRdaYz96EQL3iuw8AMcMT9A8nd4ebnqPbUykbh+pf3963oy2MbF224LIgj6LaY989YU7/7wX1otAsxq4px2TOQNPmH2lySSD9vm9VyIx8qpqiRhAWMKKnrmsXUZ8Jc9njT3PIXsdzcukwv10TaHc3vWZBdQ7TX8iLsVjycYEljNGE5KS4V3VShnADbNBE/SpPiN+2iapaRXmfsc8fZ83ZgcGTOrm4iTkbwS0ltR+BXFwfHCSYvCnY2uiYRZDpVutvSBK+H9ZIrf/GLMbw7p5jbtd9rfVnReIVkdsWORwfwb2WIUTmUEOmfja7xlpetDOAhQLh8xlHU8X78u9m/4v3XdfFyOEqMeqGWxKZB79rMmp62N/YLr+B7YToO25Vg2J7RWQVmw34Ssk17kQgz8Uc0rPEUlxYql7q67Nw5Vy6Lr7h4VridKOhc39JUTz9647EulOJacsHT65mWtDife/i6tXx4XPIXAwVRx3wF3r7VDALydqO6aAbGIbhoRg6QdTHht/arNmhA1+4o55yGQBQw4TeQ913BgQy63Kk5a/0wiSr8WsIwhjuzofBwGejJ6KZmyQk/KSLSRMNhyFsTphfAT+8pXS7uF6ICXWXETr7k/882j+Idt/iD/paPQBzg++8tQ39ogOE4UNZiJ5gmm7nuPZtl8Wwfc1H50HtRsTs0xVesjskramS9Pj//k/SNzn9dKCu5n4TUSEj35WjAsnbylxmJdyv9VrrHpCByCfcewNbGren5Ert9O5+IbWSd6XRKQN83wqfgqb3mlMCAP25fw+J824i8GGuGUEHGLHEhcw0AfP0Xs35BjvnVcz7f2P5srD4ZQIulqzYX0ynUSctdeO2kgWXHNX2Hpni/AoGu7Ut5nykMvNxA9Zb6zix0anbitpwglL8gMGGUMkFD64a7Y8pKf5/Z+/jEVdi4kf+d7Nd+AAm1ZF8gnSecG+4VDEV/hiQ5Mz2CuWgwgnQImQNbXZH2bllDUlocTq4TEAOki+fv3FhozSRpzhuLJZiVS/rEcfa0rAgJl3hlTGARcvS6mqS/+hWD21iCqj5Z/nmQ3YzQrlAJuWNhW2C1rmXuSPz9XKHXDjeXRXovChqqt+TycFj0NgrkynpIbLMu0skVtJEdz4Vf/sE/Dya6bP4MEos/QWhYc6MgD0kpGCrGEgd7zbmX1/If1P6p3IhZmWSTfqKjVJMOUCpC8Zgt0nkLh0D3FZOsTs0VXUpPwzL1VHEMMpWUhbqQGYUN8Z9RPlLX1kL66AoemLiMceV6ojAmrfNkSif3o3Flk3X7PVtrpssKopdpXLGHVbgP7yJayuPIqx0e3Njs4qgcFJW/dHLwhjrEnwQ239RaCf8XJD6JI3hjvZmpTFdhqAxQwd09ANw4E6vLJxDpXbZbxToikGOawPD1VJA80a/c+yBzKKUWLNlE8FloxDMaU0zPM4SoECm+0fG5qSBvgyixqkDvRY/kZBmoTWgZXUJy8J0xYEIe47YFh657L8sOOhm59s+KJ/mdVkCxiL7ABt6RGBAxWodvt+WUZqfTWm42t3+5RSb7RG5FZvLxNu035ztZYYVr0MRrfzOz9oyeat/mL/xLU2ZT/tf0353dQl7qtIrIDdd463NLhPtp0Xp0qs8DtRD1c8BJZSgikxVsvKkqmCX3ByFUHXo2VxcnYiEW/AeHx25uePQAH30o7ywN/5R/NIou+XixJYHswIhcDhdAErPQyZ+O4JDPhs7Styqy1lpJx9vmDogVlpBs+8fwbm+mMJhbrylBROEGKlW5zZnfynC+YnQ4csJSyo/ABqA74kfWHO7S0sZzcR2DhdBbH7fNmQTd+r+PWeBr1+T9LBqSrLbDxo9ZmlwWfDP3GD4XSna91zxFNwTfO84IQSuLut4xQcsnje2IYisO4WE+RLqeQb1D1fE9UVX0azvKz7V0uVNQImJmMb138rHviFctcSzZBcXaPW6GMqpq9RlUyRINvia+sybDhT7X1GwiLHfvcf5KBFmQ15FAVB0DhKhpj6PBjen+wU9s/HJj5L/DA5VmeaDoVJEJTydI+m03wkPTSbCwDhkq5qAl8HTj6bEz5yvENlBIYHm/k5PCY+NIe0ush6tPppguhy65P5agBO6gEbJNENegTkt9eALEr4WiEYX5mNTYSPnU7sTguz+S/4uSpq5N3+G/YvMhR/YawZhL+EL6PHLIvpnsB5TyzDVhp2SYzKl+cMMQAu3a9urAwF707apBN7nLsjvDuBVg9YbSdwoPmO5YydT4oIRIqoY4YEl0LTugY5P6wirg14GNtL1xdG4MZgpVJ8GuKE4GfL0moIn5i8cWPc2+PZccsl9ftQsmW+cNr9/H9DsslYS67bV/bKSnp2PrNZhuPh3QmbJB0iSo5LZ+vATxnZakoniLjN0kHNAPZPSAc/6v8H1/1cED0O9SWfCGyiHPr8L4EgacHbjRamFutSjL2cM80/FH5hT6zjEiuPl2mTCmMUBEeNaQpUagus5BxYc76awM6acKb/skI9yDgSKpMp3axi/31ludROM5SkKMKMj7z6+EC/6WkEmzoTidSHp/aCWPKVFbQ8gTlqCZvMSvV8cT7216ULBU/91Jct/sX3BZld38WHx/qzB8J5eiTIsPLxR3vLDYhclnq7M+7EF4qesEY9+gnWL+SL6gOY9LS5eryVpF7CSY1cJ/syERVeoZSzwknY8OHb6alhcd+2jdh5EtG7VMUVCAzres82MpPjyxPn3ZOkMpJ5WG8NRrGdQPpv2zKUlEW7l1oF6gQ8OPVrvE/MijuopY8UPdz6PMWmG/ogNyNeX33GWUYqa7cVWMc3RYOYUm+esiYzBPfAO6JIxFIHXL64XV9KPySZwAD4bcnNRsRwdVcrV42PRdlYRfgmF4omzcv4pLMhJ1aneTIHnC5wZHldlBkkBgUCaVfTm42pKTVH/r1FXkeQj0LQznFj4l7BLWSuY6JFGIkULzUdkcxlgjqnnEo+sysM/7Ynzy+JDaeppfgyOOKFLZP2gPT+hxLwGEefZZglwlhAFOFJcqwRptH3WlDhjq1YKcmTTVtqH4s520toUjrVQJrfnlPFKYv0aSXAayH2S+xbeS+QbtELlssCIxjBRX69E+7pWFx5fRV80BGJeVU2KVpkUhMdgUEuNyCiC+QqphGgrhNo7xG9fa0IstGZqSp2hDso4/bEVb/Cd0mLaM2BYe0TPH10eYbSvxO67Z1R+R/3nWLRdFD0h7qby2ZQhh492NQ93XThjtoK7O/r9KYL2lA4OWj8DrcbHFTlMThPrBT0WoEgNsBsA7XI9SSzN3BEfARC8fy1MJYi7nR5zWUflMNDKdcOftT5/S7Wa5lpl0ciSIiYYAya5G5GESR/QCyx64vYApCRk5mbOdYWq8AKSyJFvP7rCqUBY11UiNAQ1foZ4h7A23BGzifZx+hNERv8MzP9O7yDhB93y3pChDlpfDsJZuYJEicYTOJNbYMCjqQe2lSEwPkcuQKhkdLjvGysiciDlaZZothkZWSWbDswcSIPJZJ/X5/Q4Xy4GSiAFuK6loq6z1cNiqQTdHjFzOC/RHraFj+w0jrjGYwKHQsC94+5dNuhcc/TfzqD/2YbCjl+fs61q2swI6Ky1jxFRgFbJq680qJVb5ZkpJdTkwFQEsfbyWX3xoqn+OO69BoaI4q11BC1d439V+5yKK1PqKNxIxhomZVnVdzQR8Uhz4ub8noasyq8K5g8ndqCdB7gfsFesp9pATdtGl3FsMsCv2Yb0f3+fW48EyXNxT8j8bKTxj4+DpATHAoAFURBu0QJ+XTUSsju2znOT4+ZCGBy/Lov/ZcuqzUNk/o3BSuY1CJbaCQFvvuSNB++x0Qjg1eDbdg1BAJZ1pFUVCdqLkDZ00AMzRBx27Zxpp8Ze8mZroXl6wyhD4oVv4grchdY5rayjKiySAAQc6znlRFmJvilhAbUE6gYcV1pKSrmBX4hG8i5e9cOD0HQaF65H1oPY4y6CWYeaxoKoVxkh2XS19TFqIDOGPNhmrdtLBulJ50riBgETDBPKO45InvR/ZhC2izMd2uZk/XTxM1Hp6Q1ILQzwQ/3pnPRtHExplqi2C8a/kIQ6P3NjORWfiIStccJXUyyIjgkU4hG/MtgpvUUYftq4kzBK43YUtwmQM8kqm2lzk7knLFqRlHnvBkZL7mj7FiTd/lC9nRKWORwqmfF5JKUAwCah3LEuFGPk41S8KHLtHbNWyK/tFuFWTx2u4Fe/WeHxZ2yNtpQN3BgYRYF9OfzTCQZVwsmR4rKkWihQznvosk2KMVPGWLA9S4YBNFzaYGqDRPqf2YLmRzRAu7n7ijUBISKNQ3MGGky1mAvDdMKY2ViA0VhmsyhwHdEqzkLQ2/GvEtNbKE0unY7l90r+35qDpH8d/qd11Q/4GmrQ1QxKj/G4CWDCtLYXgjDEbWbGOdhDpt+JQ+VBQvbJU/VsZ8u4RJRH4UTz0JQeG2QfIsCGxxRscbXwTa0PL2gej83VUxpaHM8TEXgvuQxKEmpLWgCGzBjSIZNsaGKsDaIsI0R1vU6/XUgjOEI6LR0H5DCqbfJwoyDmB3H9glsXq5YVe7UlVz8Cou4BH3aIaNbzdQMN2EhGLlo96mcZRcJ06S8VfbTedeYcq8Rp52EYBnYnbMc4xq2OJx4JZvrDtNrwSVmRkgumPg/8qsFOKz3ctp9E8W70JGA/oBcocHl40B2Yc4tv63c0BojZcH58Kml1OmHwV2nJwRxrx0HBJI47w8LRiImlpNTaWZ/9fXcxkUxj6sXMNhOqoJrfKxEVThxINTGnit1t4vYRcvPUOBYGkh20qgjUFKnmXbJBMzl6dZXd6ZCe/oSi0je7MDfiC3dp6w2NbJAvBiFbBoawn3bauUqeVAVOizttC1/06BXF9UmenLR8N1+uQdtAptAJXOMxSy9g+AMxYcluozzdizQsH8KnyaknMPEz1aD9sTcaws0r6FwFw2gm1Gpgin1vmrNRdIa5Bhsgu8qpSf0X5aoGNTB2q8KUAr1Tmgq2I6vOF+uke7rdDyAQaVxwOgsIipPAzzChxTUSwTCXJU/ppXO5Bqjise75Kg2sY7n02FiBWaWT9xFdb13ooTuIFmqfg7mDXAyfLHmdPQ8p1aH6Cwcc8IqgoILbyBsmeAcHzLU1AoRHhsJ/rySg4PCkXcBQlqszGddK/RsyP3PlidiLnAo3eDQ5MO2PVIKvE13Hpaj4QLHqtztO5Hwlf82xFjn0x/VQ60eaFOomBfUEbva1YV6mJV9kB0m4FZUo/6fTFv3AZfWpskzd/O3EmuBwIMyZMaWI6p2UU2c5x4A5WF7b6XnIOKTRQh9FyhQwjWE8g43Ls0GZIW+XoSh6+D++ZXJiRBECUZb6/oBPp/kQ1sba7G5RCifzVhGFXVnVfkX3h7ClQSExwKWXr/mXSZI/EifHpdptOIqYfNm+bNhePeeS+3uSFSvyrvhGYEge7MuxXHV1UGyayTVK2Sz4sDclUuglfVNLneecoYbNL1dRt6Y42mkvBWaoZ+4MSHTt10fDT/P+wgd+zo23z64XXxOBedK6Yl2YlPr8PPNtqJufdjp82ER+PZjsWHsRHgp2NowQzkt5ib0LapREP0vWOA1wqshXNfTE5jxzLMFVFPorQjP9Tgj+UnUIL0DKboHTKXG2G9gyLnJXYaJEahi/XyqLEHXFQe1tCyX5HwG1GhfzIl6oa629/koiy0ud9zhG+MenfjSKFIUnjPfN5owJKDmZI0LT44U34dTUenufqiw3Euyo4eNGn5YiUSnkjJEf0glZ3Zf9KrqoN3YpIIN+CrFX//ptUcRP7iSfDZVIqtg45dA+PRUp79c7l8dgrCSvHVVOEkLEVkEfj1jDK3MhMxJId+8WZSkslgWJpSp3Zx6oa0y8BOpN3cCSqpwPdLgNcBVz+nMtWXq5RwhweaCqWrDdx4u+Ic1/zUQOQvR846n459bZ/Dapcebnz/mUc+vWoQ0+ZO4OnKrgcqNv6oso4LB9c1wrJmhICl4zty3laeJSTpEq4x4vR/ZgMtrNxRV1/Pa/5/iJET5Vk+4Pl+7EB317NB9RRi7mnUaawD+o0p++1/IRdQS80oUZ41942O4G7bOZ/sOh7M0wZQbmcPnkzbvYnpYwxFwhur0zV9IKTxlVZXZlw94qkTMy83tc1TkooIQrKjwcidsC4iX0tdwyt1Wkhkzzf3xTpYY7fRsd+u8HVaXyUwqcR09R5itoJhpzc3oL3AOLwza69dVWt86pI/2NCTUOr4uDx/6yYYHxLKnpaQiJMoaOnTWkly7s6oM6+4zXb/k3oVlHi4Z9TJyHzKLOm53phbaJ80oM3Mfyqi+Ko7lQ+rH1FDvukDvPMoARSMScOXkmWzQQ1+soAcb8m3mgrrt2H++qZTJGPnb9JJ1aFX7cFeyGZoSmPrlr8CRN61pVdMtYD8mb2F6FaqZnbJKeyrQ/GQvNN39nBu6pxt5wrc2uBkZmJ3Cb1nim1Sgp1TeZtjwvOAI1XLp28AbrU+yDtgrmEf7A9538HYo1uoC0Ppx/7SjD1qV7Eftg3ZPjvws8dwYhgCZI4d09Mkhx+pqAzOdeSwRnXamE2OiM9nqJ2fiMs4f6nl1Z5cN77GivMRUZYUqWIQsz3BvSGVtNNDZoOJXzd2kLN6UOdJD3PZH6YuvWUQzNj6FPUMJx88BXQMQmtaQNYfrvpcGhrHO2Nyo3PQdUBWk2NZomaWepij6P2UemrLz8i7Ey9DJreS/0P2IrqnQ/uti+4g/IJ9ezS+dAw7HFpgTm6cSge0cDYFwZum8d9k8+4wx/rmgE0gqXmbX1AFt5NeWyRFNAaMD7vGxrROXQWHnZtGgopxPl9vhx9vmX0v0ImhFgGzqYblNseFhqS2GnWq8Xe55nOAw3CH5jvUr2KzfP1KFxAMiVLcPR1nHGYs8DadnvLt5B82XkmSjSP4JebHlXvIn49srCtxjWw3A9kE5KYgXyLBvR7PFLp+3HHCE77j8OJtTZOc6VxWQKDblgj/If9uWp4iO61IrWBepIXxpgzSt/MB26T0pByfZyhgZsjvWKmFych/QO4tEVDfzFaaQ+OnmoN/Vb/LHrqxNh16y5Im7qeVRroz6NewwTQadL/r0FkiTRIbxiF6i8yohkEQQj5riCnRLwCO9PQicEbohjWE98QbqH3EtwEJfnA2J8lXTi14kuJQBiyliDR3p+dBPmtSAz/dNNtC8WgkHX4Uq6nJuf+xSHT7iPHYtwplx/O1NdKJelJ81s+ldltSMt8oU0tF30f8MEjIyVJ2RQRU1UQfj9ZuLiHsP/x5fRUupNyIGM2eujD/b79owE8vyJgQYpM5JuU50u1GaCEBCk6OfaP6efTgD+Uo8rgNGjTsKGvBWUpYPULzyQ4ONNNzfUO3rJo8+KIXXm4vM/e1VkK1TWEeiXWPzEKb8EuwQM59WCRnMx1++R2d/C0BVt9ibxTvdixRSdY1loJ6HeF8mjkJqe4bddMJXTAizu7ukz+9NT/cgQ+qX6lkVhihcnobmiEWUJEn5QfMi29/MOAvvqBOx80StmxvwNlJlz0gmSR9EIVJNYWfPeTb8O5VSGlWaQcSrq0S5fb6hbDf/Q5eXRiXFHgzavvpQN8h+hH1QK9Kh9Hvd7S1FkHSmPzrAZsZMJ4yZfckhAgRLuuximy0AT1wdn45pkzu9Mp/QLziXasAIBE2JntJFqIf3CCvrGM54drTeaMe98VvkTTCOJ6QMIZ6QyUHpP95NRr9h8Z0f619VOfaurNKxTmyUGp9jLJj0KEgzV9+5wnZcpi9hIn2+sF/A4jfgukwxh+SwNStjSikN4nEVoa8kJC4/TP88Qm/AyiMMMnkhvOJjTaLP4fX6aHzTfTb6P0Lt/ROJ8l+yJFcRqjRDFrb72pIiqaIERB6OyJ2xTiMa06Ata5SIn7Hlmn8YSXhft50waNNE7c4h0WfJp2BhTsE4dS5Tzp77jfg3eGU3RbaRo5Vv+xQFpTSZMGFC9GQktjlniDDzpyeR/gphsXlvAGvIUoVsZMenAIlKxR2WrpQJNJmy4jwx9Py4CW3Guoavr9O+g0tbHqJ03rKMRT9l0ZC01xARIdxQjJMvXXLcXT5xU9H1J6S1nuOHUinClc8mXNencFy1gXXu9iCex0GFdyp7aunqi5qHFAQADDsgMUebpC0QNlLz4kP36GpGg2a+rLm/Dep4cG6M2k4PdrjwAaRyToj0CYwV7Dxb46WJaVZ8h/nQHj2B+tqbIROIlKYmvtxCz2yPWeYd1EfbQc6P00Qp/Az8zDg7K9PtvPOG+lyWptpbte9YD6SuAMm0b3TQ25pC9VUJ5sa+IJ0a+u+kn+7e01xkrNn/5EMN2hrFzSBcC+qKF0RikUMV519CU8IZR73ohhYf4mjoEIMXYcQtEmUVS6/af8JFPGGhh44fbwPACfqBd760x0iwYibJJOnFDJLy0AyFwrHYX8Khf5j92xHP7kS/043e1zmHffAj5AAAAAA=="
+            rating={4}
+          />
         </div>
-    )
+        <div className="home__row">
+          <Product
+            id="93487593875093"
+            title="Dell XPS 15 7590 Home and Business Laptop (Intel i7-9750H 6-Core, 32GB RAM, 512GB PCIe SSD, NVIDIA GTX 1650, 15.6 4K UHD (3840x2160), Wifi, Bluetooth, 2xUSB 3.1, 1xHDMI, Backlit Keyboard"
+            price={2049.99}
+            image="https://images-na.ssl-images-amazon.com/images/I/71yT4xJt8JL._AC_SL1500_.jpg"
+            rating={5}
+          />
+          <Product
+            id="48594396550"
+            title="HP Envy x360-15.6 FHD Touch - 10th gen i7-10510U - 12GB - 512GB SSD+16GB Optane "
+            price={1044.5}
+            image="https://images-na.ssl-images-amazon.com/images/I/51%2B4iS3axaL._AC_SL1000_.jpg"
+            rating={4}
+          />
+          <Product
+            id="345908373845"
+            title="Apple MacBook Air (13-inch, 8GB RAM, 512GB SSD Storage) - Space Gray (Latest Model) "
+            price={1199.99}
+            image="https://images-na.ssl-images-amazon.com/images/I/71k3fJh5EwL._AC_SL1500_.jpg"
+            rating={4}
+          />
+        </div>
+        <div className="home__row">
+          <Product
+            id="495873945909"
+            title="New Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage, 2.6GHz Intel Core i7) - Space Gray "
+            price={2149.0}
+            image="https://images-na.ssl-images-amazon.com/images/I/71pC69I3lzL._AC_SL1500_.jpg"
+            rating={5}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
