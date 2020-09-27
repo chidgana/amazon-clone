@@ -3,14 +3,10 @@ import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-
+import { getBasketTotal } from "./reducer";
 function Subtotal() {
   const [{ basket }, dispatch] = useStateValue();
-  const getBasketTotal = () => {
-    let total = 0;
-    basket.map((item) => (total = total + item.price));
-    return total;
-  };
+
   return (
     <div className="subtotal">
       <CurrencyFormat
