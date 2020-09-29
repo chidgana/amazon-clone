@@ -8,11 +8,11 @@ import Login from "./Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
+import Payment from "./Payment";
 function App() {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log("user:", authUser);
       if (authUser) {
         dispatch({
           type: actionTypes.SET_USER,
@@ -33,10 +33,15 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
+          </Route>
           <Route path="/checkout">
             <Header />
             <Checkout />
           </Route>
+
           <Route path="/">
             <Header />
             <Home />
