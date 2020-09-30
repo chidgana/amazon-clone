@@ -24,7 +24,7 @@ function Subtotal() {
         decimalScale={2}
         displayType={"text"}
         thousandSeparator={true}
-        prefix="$"
+        prefix="₹"
       />
       <button onClick={() => history.push("/payment")}>
         Proceed to Checkout

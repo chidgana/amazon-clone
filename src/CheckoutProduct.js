@@ -16,7 +16,7 @@ function ShoppingBasket({ key, id, image, title, price, rating }) {
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{title}</p>
         <p className="checkoutProduct__price">
-          <small>$</small>
+          <small>₹</small>
           <strong>{price}</strong>
         </p>
         <div className="checkoutProduct__rating">
