@@ -5,13 +5,14 @@ import CheckoutProduct from "./CheckoutProduct";
 import { Link, useHistory } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
-import { getBasketTotal } from "./reducer";
+import { actionTypes, getBasketTotal } from "./reducer";
 import axios from "./axios";
+import db from "./firebase";
 function Payment() {
   const history = useHistory();
   const stripe = useStripe();
   const elements = useElements();
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceeded] = useState(false);
@@ -25,13 +26,18 @@ function Payment() {
       const response = await axios({
         method: "post",
         //stripe expects the total in a  currencies submits
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+        url: `/payments/create?total=${Math.ceil(
+          getBasketTotal(basket) * 100
+        )}`,
       });
+
       setClientSecret(response.data.clientSecret);
     };
-    getClientSecret();
+    if (basket.length > 0) {
+      getClientSecret();
+    }
   }, [basket]);
-  console.log("Client Request is>>>>>", clientSecret);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -43,9 +49,22 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         //paymentIntent = payment confirmation
+
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+        dispatch({
+          type: actionTypes.EMPTY_BASKET,
+        });
         history.replace("/orders");
       });
   };

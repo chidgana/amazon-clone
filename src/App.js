@@ -11,6 +11,7 @@ import { actionTypes } from "./reducer";
 import Payment from "./Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./Orders";
 
 const promise = loadStripe(
   "pk_test_51HX4uhLnaJQDbJfvvXUE3qpDoDGB0O94FGfvW2DBKTZiHd7hAy0SaKXAfWq1dUCg8BzNKoEYVJWiAeMq7I7dGXzf00IvjsNgLW"
@@ -36,6 +37,10 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>

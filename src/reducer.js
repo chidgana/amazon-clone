@@ -12,6 +12,7 @@ export const actionTypes = {
   SET_USER: "SET_USER",
   ADD_TO_BASKET: "ADD_TO_BASKET",
   REMOVE_FROM_BASKET: "REMOVE_FROM_BASKET",
+  EMPTY_BASKET: "EMPTY_BASKET",
 };
 
 const reducer = (state, action) => {
@@ -42,6 +43,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+    case actionTypes.EMPTY_BASKET:
+      return {
+        ...state,
+        basket: [],
       };
     default:
       return state;
